@@ -1,0 +1,11 @@
+clean
+throw
+clean
+read
+bath
+run
+swim
+brush
+prepare
+sleep
+meditate
