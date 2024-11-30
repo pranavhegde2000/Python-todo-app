@@ -1,4 +1,5 @@
-from functions import get_todos, write_todos
+#from functions import get_todos, write_todos
+import functions
 import time
 # import functions
 
@@ -15,7 +16,7 @@ while True:
         # file = open('todos.txt', 'r')
         # todos = file.readlines()
         # file.close()
-        todos = get_todos()  # functions.get_todos() can be used if we only import functions module, usefule when a module as many functions
+        todos = functions.get_todos()  # functions.get_todos() can be used if we only import functions module, usefule when a module as many functions
 
         todos.append(todo + '\n')
         # file = open('todos.txt','w') #Open the todos.txt file in write mode
@@ -25,10 +26,10 @@ while True:
             function beforehand that appends the data in that file into todosshow
         '''
         # file.close()
-        write_todos(todos)
+        functions.write_todos(todos)
 
     elif user_action.startswith('show'):
-        todos = get_todos()
+        todos = functions.get_todos()
 
         # new_todos = [item.strip('\n') for item in todos]
         for index, item in enumerate(todos):
@@ -39,23 +40,23 @@ while True:
         try:
             number = int(user_action[5:])
             number = number - 1
-            todos = get_todos()
+            todos = functions.get_todos()
             print("Here is how it looks like now", todos)
             new_todo = input("Enter the new todo: ")
             todos[number] = new_todo + "\n"
             print("Here is how it will look after the edit", todos)
-            write_todos(todos)
+            functions.write_todos(todos)
         except ValueError:
             print("Your command is not valid.")
             continue
     elif user_action.startswith('complete'):
         try:
             number = int(user_action[9:])
-            todos = get_todos()
+            todos = functions.get_todos()
             index = number - 1
             todo_to_remove = todos[index]
             todos.pop(index)
-            write_todos(todos)
+            functions.write_todos(todos)
 
             message = f"Todo {todo_to_remove} was removed from the list \n"
             print(message)
