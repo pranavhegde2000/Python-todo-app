@@ -10,6 +10,3 @@ sleep
 NSDR
 test
 testing3
-example
-My newest todo is added
-And lastly
