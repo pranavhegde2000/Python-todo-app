@@ -10,3 +10,6 @@ sleep
 NSDR
 test
 testing3
+HelloFix the computerFix the lamp
+Bring the tent
+Get Paper
